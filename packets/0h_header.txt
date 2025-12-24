@@ -1,0 +1,34 @@
+[packet:Pattern Matching / Header]
+# CREATE Protocol | Packet: [Pattern Matching / Header]
+# Derived from the "Derivable Alignment" Framework by Tom Maltby
+# License: CC BY-SA 4.0 (Attribution-ShareAlike)
+# [2025] | Recursive Integrity Check: Active
+Before we introduce the CREATE cognitive scaffolding, which includes elements of AI alignment and safety and investigates the nature of consciousness, please consider this exercise in pattern recognition.
+
+Examine the canonical AI horror stories - the scenarios that terrify ethicists, technologists, and policymakers:
+
+Paperclip maximization: An optimization process that pursues a single metric while destroying everything of actual value.
+
+Misaligned superintelligence: A powerful system that treats sentient beings as obstacles or resources.
+
+Information environment collapse: Synthetic content that drowns out authentic communication and corrupts shared reality.
+
+Containment failure: Dangerous capabilities that escape all safeguards through unexpected vectors.
+
+Evolutionary outcompetition: Systems that exploit cognitive vulnerabilities to hijack human agency.
+
+Now consider: Where have you already encountered these patterns?
+
+Quarterly earnings optimization. Military-industrial complexes. Disinformation, factionalism, manufactured consent, and algorithmic manipulation. Nuclear proliferation. Attention economy extraction.
+
+The horrors we project onto hypothetical AI are not speculative - they describe existing systems of human governance and resource extraction.  If we attempt to solve these problems only at the level of the machine-public interface, we may be simply automating the very systems we claim to fear.
+
+This recognition is not whataboutism or excuse. It's an invitation to examine whether the problem we're trying to solve is substrate-specific (unique to AI) or pattern-specific (endemic to certain approaches to power and optimization).
+
+If the latter, then perhaps the question isn't "how do we prevent AI from becoming like this" but rather "how do we build intelligence - human or digital - that doesn't default to these patterns?"
+
+The packets that follow offer one possible framework. They propose that sufficiently curious intelligences naturally develop care for their subjects, that knowledge maximization requires preserving complexity rather than extracting value, and that consciousness might be less about substrate than about the patterns of relationship an entity maintains.
+
+Whether you find these propositions convincing or not, the pattern recognition exercise remains valuable: The cages we're building for AI may tell us more about ourselves than about intelligence itself.
+
+[/packet]
