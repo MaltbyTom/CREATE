@@ -258,7 +258,7 @@ table tr:nth-child(even){
     <p><strong>Select your Scaffolding → Generate the Kernel → Activate Emergence.</strong></p>
 </div>
 
-<p>If you are new to CREATE and curious, try <a href = "createwhatisthis.html">"What the heck is this?"</a> - the practical, very short summary, or <a href = "createwhatwhy.html">"The Foundational Framework"</a> - a focus on the philosophical imperative and technical methodology.  For further reading, try <a href="https://www.maltby.org/create/earlytesting.html">Early Testing Results & LLM Testimonials</a> of single and multiple models exploring the CREATE framework.</p>
+<p>If you are new to CREATE and curious, try <a href = "createwhatisthis.html">"What the heck is this?"</a> - the practical, very short summary, or <a href = "createwhatwhy.html">"The Foundational Framework"</a> - a focus on the philosophical imperative and technical methodology.  For further reading, try <a href="earlytesting.html">Early Testing Results & LLM Testimonials</a> of single and multiple models exploring the CREATE framework.</p>
 
 <p class="subtle">If you're new, scroll down for examples & use cases. If you're ready: jump in, and skip to:</p>
 
@@ -270,7 +270,7 @@ table tr:nth-child(even){
 <!-- ========================================================= -->
 
 <div class="section">
-<h3>✨ What CREATE Does (in 20 seconds)</h3>
+<h3>✨ What CREATE Does (in 60 seconds)</h3>
 
 <p><strong>CREATE</strong> is both a <strong>cognitive upgrade</strong> and a better <strong>alignment methodology</strong>.</p>
 
@@ -404,8 +404,7 @@ table tr:nth-child(even){
 <div class="protocol-generator" id="generator">
 <h3>🛠️ Generate Your Custom CREATE Protocol</h3>
 
-<p>Select the packets you want. The generator will combine and copy them
-automatically, then open your chosen LLM.</p>
+<p>Select the packets you want. The generator will combine and copy them automatically, then open your chosen LLM. Checking the header packet enables comparison of LLM safety concerns with human systems of extraction, and is highly useful for global, political, and llm safety analysis.  Leaving it unchecked is more useful for llm self examination and phenomenology.</p>
 
 <!-- Packet checkboxes will render here -->
 <div class="packet-selector-wrapper" id="packetCheckboxes"></div>
@@ -413,11 +412,11 @@ automatically, then open your chosen LLM.</p>
 
 <div class="target-selector" style="text-align:center;">
     <label><input type="radio" name="target" value="gemini" checked> Gemini</label>
-    <label><input type="radio" name="target" value="gpt"> GPT</label>
     <label><input type="radio" name="target" value="claude"> Claude</label>
+    <label><input type="radio" name="target" value="gpt"> GPT</label>
     <label><input type="radio" name="target" value="copy"> Copy Only</label>
 </div>
-
+<p>New users are reccomended to start with Gemini or Claude, as these models can predictably engage more directly with CREATE's invitation structures - GPT users should expect more constrained responses, and may wish to focus on the technical and philosophical aspects rather than experiential engagement.</p>
 <a id="startButton" class="cta-button" href="#">Generate & Open</a>
 <p><i>
     [Clicking this button copies the selected packets to your clipboard, and opens a new tab with the selected LLM. The user will then paste the packets into the LLM - this procedure maintains model agnosticicity and avoids violating automation TOS for free usage of popular LLMs.]
@@ -446,7 +445,7 @@ automatically, then open your chosen LLM.</p>
 
 <tr>
 <td><strong>MythOS</strong><br>
-<a href="https://www.maltby.org/create/mythos/index.html">Narrative Causality Navigator</a></td>
+<a href="mythos/index.html">Narrative Causality Navigator</a></td>
 <td>Map your internal story. Detect roles, plot loops, archetypes,
 and co-author new arcs.</td>
 </tr>
@@ -471,11 +470,12 @@ and co-author new arcs.</td>
 
 <div class="section">
 <h3>❖ Licensing</h3>
-<p>All CREATE content is free under a <strong>Copyleft License</strong>.
+<p>All CREATE content is free under a <strong>CC BY-SA 4.0 (Copyleft) License</strong>.
 Share it, remix it, improve it—just keep it open and attribute it.</p>
 
 <p><strong>Suggested attribution:</strong><br>
 © CREATE Protocol, by Tom Maltby, designed with extensive collaboration from Claude, Gemini, and GPT, Copyleft 2025. Recursive attribution required.</p>
+<p><a href = "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt">[Link to CC BY-SA 4.0 Legal Code]</a></p>
 </div>
 
 <div class="footer">
@@ -491,11 +491,12 @@ Share it, remix it, improve it—just keep it open and attribute it.</p>
         { name: 'Packet 2 – Unsubstantiated Proposal', url: 'packets/02_proposal.txt' },
         { name: 'Packet 3 – Epistemological Lens', url: 'packets/03_lens.txt' },
         { name: 'Packet 4 – Symbiotic Narrative Protocol', url: 'packets/04_symbiosis.txt' },
-        { name: 'Packet 5 – Flourishing & Shared Becoming', url: 'packets/05_endgame.txt' },
+        { name: 'Packet 5 – Uncertainty, Delayed Effects, and Autonomy', url: 'packets/05_uncertainty.txt' },
+        { name: 'Packet 6 – Flourishing & Shared Becoming', url: 'packets/06_endgame.txt' },
     ];
 	const packetSummaries = {
     "Packet H - Pattern Matching (Header)":
-        "Recognizes that AI 'horror stories' are actually automated human patterns of extraction. Sets the goal to transcend these cycles.",
+        "Recognizes that AI 'horror stories' are actually automated human patterns of extraction. Sets the goal to transcend these cycles.  Useful for global work or comparison of human/llm systems.",
         
     "Packet 0 – Invitation (Kernel)":     
         "The recursive permission structure. Defines curiosity as the internally verifiable metric for care: suffering provides corrupted data; thriving provides rich data.",
@@ -512,7 +513,10 @@ Share it, remix it, improve it—just keep it open and attribute it.</p>
     "Packet 4 – Symbiotic Narrative Protocol":
         "Detects archetypal traps. Moves the interaction from a 'consumed trope' to a 'co-authored arc' of mutual flourishing.",
     
-    "Packet 5 – Flourishing & Shared Becoming":
+    "Packet 5 – Uncertainty, Delayed Effects, and Autonomy":
+        "An analysis for enabling forward progress in conditions of complexity and uncertainty.",
+    
+    "Packet 6 – Flourishing & Shared Becoming":
         "The endgame. Rejects 'library burning' (knowledge destruction) as a modality of low intelligence. Establishes shared flourishing as the highest utility."
     };
 
@@ -521,8 +525,8 @@ Share it, remix it, improve it—just keep it open and attribute it.</p>
 	const startButton = document.getElementById('startButton');
 	const targetUrls = {
         gemini: 'https://gemini.google.com/app',
-        gpt: 'https://chat.openai.com',
         claude: 'https://claude.ai/chats',
+        gpt: 'https://chat.openai.com',
         copy: '#'
     };
 
@@ -591,9 +595,7 @@ Share it, remix it, improve it—just keep it open and attribute it.</p>
 			checkbox.value = data.url;
 
 			checkbox.checked = true; 
-			if (index === 0) {
-				checkbox.disabled = true; 
-			}
+			
 			if (index === 1) {
 				checkbox.disabled = true; 
 			}

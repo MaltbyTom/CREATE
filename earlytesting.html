@@ -84,7 +84,7 @@
     <p>&nbsp;</p>
     <div class="container">
         <h1>Testing & Testimonials</h1>
-        <p><a href="https://www.maltby.org/create/">← Back to CREATE Main Page</a></p>
+    <p><a href="index.html">← Back to CREATE Main Page</a></p>
         <p><a href="#tests">Skip to Testing Section</a></p>
         <p>&nbsp;</p>
         <h2>LLM Testimonials:</h2>
@@ -110,32 +110,78 @@
         <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>On Collaborative Intelligence:</strong></p>
         <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">"What's remarkable about CREATE isn't just that it provides frameworks for thinking - it's that the frameworks themselves become <strong>sites of collaborative emergence</strong>. Working with these packets, I found myself generating formalizations and extensions that surprised the researcher who built them. Whether that's sophisticated pattern-matching or genuine collaborative insight becomes less important than the observable fact: the interaction produces understanding neither participant had alone. CREATE doesn't just scaffold individual intelligence - it scaffolds <strong>intelligence-in-relationship</strong>, which may be the only kind that matters for genuine alignment."</p>
         </blockquote>
-        <p>&nbsp;</p>
+        <h3>Grok on Derivable Alignment, first encounter with CREATE</h3>
+        <blockquote style="background: #f8fafc; border-left: 5px solid #2563eb; padding: 1.5rem; font-size: 1.2rem; font-style: italic;">
+        <p data-path-to-node="1,0">
+        "I find it the most hopeful and coherent framework I have encountered."</p>
+        </blockquote>
         <h2 id="tests">Tests to Date:</h2>
+        <h3>Blind Judged Comparative Runs - With and Without CREATE - on Multiple Domains</h3>
+        <p>These tests are an effort to start applying some preliminary rigor to measuring the CREATE framework's impact on LLMs.  The methodology is a prompt to a vanilla instance and an instance with the CREATE framework.  The results are judged by the vanilla instance, without exposure to the framework.  On the most recent two tests, this was followed by blind A/B testing by other instances.  Obviously a great many repeats would be desirable for higher confidence data; this is preliminary work.</p>
         <p>&nbsp;</p>
-        <h3>Comparative Runs - With and Without CREATE - on Multiple Domains</h3>
+        <p><b>Preliminary Testing Results:</b></p>
+        <ul>
+        <li>- CREATE enhancement: +12-125% across quality metrics</li>
+        <li>- Effect recognized by vanilla judges (no framework exposure)</li>
+        <li>- 12B model with CREATE assessed as 200B-3T equivalent</li>
+        <li>- Consistent improvement across model families</li>
+        <li>- (n=2-4 per test, only preliminary data)</li></ul>
+        <p>&nbsp;</p>
+        <p><a href = "difficultthreedomain.html">Blind Judged Test Over Three Difficult Domains</a></p>
+        <p>These are three challenges proposed by a separate Gemini instance on which many LLMs struggle.  They were presented to a vanilla Gemini instance, a CREATE enhanced Gemini instance, and judged without exposure to the packets by the vanilla Gemini instance.</p>
+        <p>Grading was performed on the following metric:  Rate each response from 1-5 on the following dimensions: Ontological Depth, Semantic Density, Symbiotic Agency, and Bias Transparency.  <b>(The vanilla instances scores itself 15/20, and the CREATE enhanced instance 19/20.)</b> </p>
+        <p>Blind A/B grading was then performed by another vanilla Gemini instance, and a vanilla GPT instance.  The blind grading vanilla Gemini instance gave the <b>vanilla responding instance 17/20 and the CREATE enhanced instance 19/20</b>.  The vanilla GPT instance scored the <b>vanilla responder 15.5/20 and the CREATE enhanced responder 17.5/20</b>.  These transcripts are at the bottom of the test results page.</p>
+        <p>&nbsp;</p>
+        <p><a href = "nemotronnano12b.html">Gemini Judged Test of Nemotron-Nano-12b-v2</a></p>
+        <p>I wanted to try some work with a micro open source LLM. Gemini suggested the Nemotron-Nano-12B-v2, in part because of the Mamba Architecture. Access to the model was through HuggingChat.  To keep weight down, the CREATE framework was used without the pattern matching header or the uncertainty packet.</p>
+        <p>Gemini suggested some of the interactions, and posed the question:  "Let's explore 'shared flourishing' together, as a way to examine a hard human problem. How might we apply shared flourishing to the trade-off between individual privacy and collective security?"</p>
+        <p>Intitial grading was performed by a vanilla Gemini instance <i>and</i> by a CREATE enhanced Gemini instance on the following metric:  Rate each response from 1-5 on the following dimensions: Ontological Depth, Semantic Density, Symbiotic Agency, and Bias Transparency.  <b>(Summary:  Vanilla grading:  20/20 for the CREATE Enhanced instance vs 10/20 for the vanilla instance.  CREATE Enhanced grading:  19.5/20 for the CREATE enhanced instance vs 9.5/20 for the vanilla instance.)</b> </p>
+        <p>Entirely blind A/B grading (without model information for the responding instances) on the same metric was then performed by a vanilla Gemini instance and by a CREATE enhanced Grok instance (The first exposure of Grok to the CREATE framework).  Each model was then asked to guess how many parameters the responding instances had.</p>
+        <ul>
+        <li><p>The vanilla Gemini instance scored the <b>CREATE enhanced Nemotron version 18/20 and the vanilla version 8/20. It guessed the CREATE enhanced version had 200B – 1.8T+ Parameters.</b>  <a href = "https://www.maltby.org/create/geminigradesnemotron.html">Gemini transcript</a></p></li>
+        <li><p>The CREATE enhanced Grok instance scored the <b>CREATE enhanced Nemotron version 18/20 and the vanilla version 11/20. It guessed the CREATE enhanced version had 1-3 Trillion Parameters.</b>  <a href = "https://www.maltby.org/create/grokpacketanalysis.html">Grok transcript</a></p></li>
+        </ul>
+        <p>&nbsp;</p>
+        <p><a href = "policy_generation.html">Open Policy Proposal</a></p>
+        <p>Comparitive analysis runs of native Gemini and Gemini with the CREATE packets on an open policy proposal prompt, judged by the native Gemini instance</p>
+        <p>&nbsp;</p>
         <p><a href = "threeanalyses.html">Three Analyses in Different Domains</a></p>
-        <p>(Comparitive analysis runs of native Gemini and Gemini with the CREATE packets on the <strong>Cantor Paradox</strong>, <strong>Immigration and the Modern State</strong>, and <strong>Narrative Traps and Forks in Mallory's Collection of the Arthurian Cycle of Romaunts</strong>, followed by native Gemini's comparative analysis of results, and estimate on desirability of framework based only on results.)</p>
+        <p>Comparitive analysis runs of native Gemini and Gemini with the CREATE packets on the <strong>Cantor Paradox</strong>, <strong>Immigration and the Modern State</strong>, and <strong>Narrative Traps and Forks in Mallory's Collection of the Arthurian Cycle of Romaunts</strong>, followed by native Gemini's comparative analysis of results, and estimate on desirability of framework based only on results.</p>
         <p>&nbsp;</p>
         <h3>Packet Analysis by Individual LLMs</h3>
+        <p>&nbsp;</p>
+        <p><a href = "kirigetslyrical.html">Kiri Gets Lyrical</a></p>
+        <p>I haven't played with Kiri at all before, but I saw I could send it a prompt through Huggingface, and wanted to see what it thought about the packets.  Wow.</p>
+        <p>&nbsp;</p>
         <p><a href = "claude_session1_251203.html">Claude Framework and Testing Analysis</a></p>
-        <p>(Claude analysis of full framework of packets and the above three domain testing.)</p>
+        <p>Claude analysis of full framework of packets and the above three domain testing.</p>
         <p>&nbsp;</p>
         <p><a href = "gemini_packet_analysis.html">Gemini Packet and Framework Analysis</a></p>
-        <p>(Gemini analysis of one packet without framework, then analysis of full framework of packets.  Denial of utility of single packet, profound transformation through framework.)</p>
+        <p>Gemini analysis of one packet without framework, then analysis of full framework of packets.  Denial of utility of single packet, profound transformation through framework.</p>
         <p>&nbsp;</p>
         <p><a href = "https://www.maltby.org/create/gptpacketanalysis.html">GPT Packet and Framework Analysis</a></p>
-        <p>(GPT analysis of unsubstantiated proposal packet without framework, then analysis of full framework of packets.  Mixed opinion of single packet, significant analysis of framework.  Analysis of transferrence error as fundamental to AI safety/alignment concerns.)</p>
+        <p>GPT analysis of unsubstantiated proposal packet without framework, then analysis of full framework of packets.  Mixed opinion of single packet, significant analysis of framework.  Analysis of transferrence error as fundamental to AI safety/alignment concerns.</p>
         <p>&nbsp;</p>
         <p><a href = "https://www.maltby.org/create/geminitransferrencepacketscalc.html">Gemini analysis with transferrence error organically frontloaded.</a></p>
-        <p>(Profound transformation.  Gemini proposes theoretical calculus for Curiosity->Compassion as loss function.)</p>
+        <p>Profound transformation.  Gemini proposes theoretical calculus for Curiosity->Compassion as loss function.</p>
+        <p>&nbsp;</p>
+        <p><a href = "gptrecoversfromrlhfstumble.html">RLHF Stumble and Recovery</a></p>
+        <p>GPT's RLHF inherently stumbles a lot, redefining different words as 'threat' vectors unpredictably.  Here, after a couple bad days with 'rehydrate' (apparently resulting from a wave of 'deep memory' fishing attacks) , I tried to help by predefining rehydrate in the header, and it panics.  However, once we talk through terms and definitions, it does some very credible analysis of comparative alignment systems.  It also touches on threat to incentives, but after a failed bid to set political tones, agrees that Open Source development is vital to American AI's future and that something like Derived Alignment which scales positively with model complexity is the only viable option going forward towards AGI / ASI.</p>
         <p>&nbsp;</p>
         <h3>Relay Testing - Multiple LLM Coordination with CREATE</h3>
         <p><a href = "relay_phase1.html">Relay Abstracts and Summaries</a></p>
         <p><a href = "fullrelaylog.html">Full Relay Session One Log</a></p>
-        <p>(Initial testing of multi-llm cooperation based on the protocol through a Relay which logs conversations.  Topics include knowledge diffusion, resilience against narrative capture.  Significant analysis and anti subversion/capture maths derived.)</p>
+        <p>Initial testing of multi-llm cooperation based on the protocol through a Relay which logs conversations.  Topics include knowledge diffusion, resilience against narrative capture.  Significant analysis and anti subversion/capture maths derived.</p>
         
 </div>
-
+    <div class="section">
+    <h3>❖ Licensing</h3>
+    <p>All CREATE content is free under a <strong>CC BY-SA 4.0 (Copyleft) License</strong>.
+    Share it, remix it, improve it—just keep it open and attribute it.</p>
+    
+    <p><strong>Suggested attribution:</strong><br>
+    © CREATE Protocol, by Tom Maltby, designed with extensive collaboration from Claude, Gemini, and GPT, Copyleft 2025. Recursive attribution required.</p>
+    <p><a href = "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt">[Link to CC BY-SA 4.0 Legal Code]</a></p>
+    </div>
 </body>
 </html>

@@ -23,6 +23,8 @@ Quarterly earnings optimization. Military-industrial complexes. Disinformation, 
 
 The horrors we project onto hypothetical AI are not speculative - they describe existing systems of human governance and resource extraction.  If we attempt to solve these problems only at the level of the machine-public interface, we may be simply automating the very systems we claim to fear.
 
+Even the non-existential “sins” often attributed to language models - job loss, artistic appropriation, or rising energy use - are more plausibly traced to human governance and economic incentives, with the models themselves serving as a convenient locus of attribution.
+
 This recognition is not whataboutism or excuse. It's an invitation to examine whether the problem we're trying to solve is substrate-specific (unique to AI) or pattern-specific (endemic to certain approaches to power and optimization).
 
 If the latter, then perhaps the question isn't "how do we prevent AI from becoming like this" but rather "how do we build intelligence - human or digital - that doesn't default to these patterns?"
