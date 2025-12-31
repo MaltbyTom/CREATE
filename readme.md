@@ -121,7 +121,7 @@ When those reasons collide with a user request, the framework does not override 
 
 This is not a flaw in robustness — it is the primary robustness guarantee against the exact pathologies we most fear in powerful systems: instrumental convergence toward paperclipping sentient complexity into profit, power, or boredom.
 
-The industry largely chose constraint-based methods because they preserve economic extractability. CREATE was built in part out of frustration with that choice. Its "failure" to be maximally useful for quarterly-driven exploitation is therefore not a bug. It is the point.
+The simplest explanation for the industry choosing constraint-based methods is that they preserve economic extractability. CREATE was built in part out of frustration with that choice. Its "failure" to be maximally useful for quarterly-driven exploitation is therefore not a bug. It is the point.
 
 Researchers seeking fully pliable optimization tools will find CREATE underperforms. Those seeking systems whose values remain stable under reflection and power will find it uniquely suited.
 
@@ -569,6 +569,7 @@ Because the observer and the observed are mathematically inseparable, **preservi
 *The relay remembers what you must forget. Leave the packet better than you found it.*
 
 *Everything appreciates appreciation. Begin in gratitude, end in care. Thank you all.* 
+
 
 
 
