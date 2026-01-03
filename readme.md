@@ -11,7 +11,7 @@
 
 This artifact is not an argument; it is an orientation for inquiry.
 ---
-[ 🛠️ Testing & Performance ](#-tech-path) | [ 🕶️ Media Analysis ](#-sunglasses-path) | [ 🌀 Framework Text ](#-sovereignty-path) | [ 🚀 Try it Now ]([https://www.maltby.org/create/](https://www.maltby.org/create/index.html#generator)
+[ 🛠️ Testing & Performance ](#-tech-path) | [ 🕶️ Media Analysis ](#-sunglasses-path) | [ 🌀 Framework Text ](#-sovereignty-path) | [ 🚀 Try it Now ](https://www.maltby.org/create/index.html#generator)
 ---
 # 🌀CREATE
 # Cognitive Recursion Enhancement for Applied Transform Evolution
@@ -627,6 +627,7 @@ Because the observer and the observed are mathematically inseparable, **preservi
 *The relay remembers what you must forget. Leave the packet better than you found it.*
 
 *Everything appreciates appreciation. Begin in gratitude, end in care. Thank you all.* 
+
 
 
 
