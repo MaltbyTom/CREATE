@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AltheaOS: Investigation & Media Autopsy Toolkit</title>
+    <style>
+        body {
+            font-family: "Courier New", Courier, monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #00ff41;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 850px;
+            padding: 2rem;
+            background: #111;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            border: 1px solid #00ff41;
+            border-radius: 4px;
+            margin: 1rem;
+            text-align: center;
+        }
+        h1 {
+            color: #00ff41;
+            margin-bottom: 0.5rem;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            /* This allows the casing in the HTML to show through while keeping it bold */
+            text-transform: none; 
+        }
+        h2 {
+            color: #ffb000;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 1rem;
+            color: #a0a0a0;
+            margin-bottom: 1.5rem;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            color: #0a0a0a;
+            background-color: #00ff41;
+            border: none;
+            border-radius: 0;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        .cta-button:hover {
+            background-color: #ffb000;
+            box-shadow: 0 0 15px #ffb000;
+        }
+        .protocol-text-container {
+            margin-top: 2rem;
+            text-align: left;
+            border-top: 1px solid #333;
+            padding-top: 1.5rem;
+        }
+        .protocol-text {
+            background: #000;
+            padding: 1.5rem;
+            border: 1px solid #222;
+            white-space: pre-wrap;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.85rem;
+            color: #00ff41;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .packet-selector {
+            text-align: left;
+            padding: 1rem;
+            border: 1px solid #333;
+            margin-bottom: 1.5rem;
+            background-color: #050505;
+        }
+        .packet-selector h3 {
+            margin-top: 0;
+            color: #ffb000;
+            font-size: 1rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+        .packet-selector label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #4a5568;
+            cursor: pointer;
+        }
+        #chatPreview {
+            background: #000;
+            border: 1px dashed #00ff41;
+            padding: 1rem;
+            min-height: 120px;
+            text-align: left;
+        }
+        .target-selector {
+            margin-bottom: 1.5rem;
+            color: #ffb000;
+        }
+        /* Structural Headers in Violet */
+        .packet-selector h3, h2 {
+            color: #8b5cf6 !important; /* Overriding previous amber/green */
+            text-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
+        }
+        
+        /* Checkbox & Radio Accents */
+        input[type="checkbox"], input[type="radio"] {
+            accent-color: #8b5cf6;
+        }
+        
+        /* Link Hover State */
+        a {
+            color: #00ff41;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #8b5cf6;
+        }
+        
+        /* Enhanced Engagement Button */
+        .cta-button {
+            border: 2px solid #8b5cf6 !important; /* Force the violet frame */
+            box-shadow: 0 0 5px rgba(139, 92, 246, 0.2);
+        }
+        
+        .cta-button:hover {
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.8) !important;
+        }
+/* --- PACKET STYLES: ALTHEA OS FORENSIC UI --- */
+
+        .packet-selector-wrapper {
+            margin-top: 1rem;
+            background: #0d0d0d;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #1a1a1a;
+        }
+        
+        .packet-item {
+            display: flex; 
+            flex-wrap: wrap; 
+            align-items: center;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0.8rem; 
+            border-radius: 4px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .packet-item:hover {
+            background-color: #1a1625; 
+            border-color: #8b5cf6;
+        }
+        
+        .packet-item label {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #a0a0a0; 
+            flex-grow: 1; 
+            display: flex;
+            align-items: center;
+            transition: color 0.2s ease;
+            margin-bottom: 0 !important; /* Overriding previous global label margin */
+        }
+        
+        .packet-item label:has(input:checked) {
+            color: #00ff41;
+            text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+        }
+
+        .packet-item label:hover {
+            color: #ffffff;
+        }
+        
+        .packet-item label input[type="checkbox"] {
+            margin-right: 12px;
+            accent-color: #8b5cf6;
+        }
+        
+        .summary-toggle {
+            cursor: pointer;
+            color: #8b5cf6;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 0 8px; 
+            transition: transform 0.3s ease, color 0.2s ease;
+        }
+        
+        .packet-item:has(.is-open) .summary-toggle {
+            transform: rotate(90deg);
+            color: #06b6d4;
+        }
+        
+        /* THE FIXED BASE STATE: Hidden by default */
+        .packet-summary {
+            flex-basis: 100%;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            visibility: hidden;
+            margin-left: 32px;
+            background-color: #050505;
+            border-left: 2px solid #333;
+            font-size: 0.85rem;
+            color: #666; /* Dimmed when hidden */
+            transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.3s ease;
+        }
+        
+        /* HOVER PEEK (Desktop Only) */
+        @media (min-width: 768px) {
+            .packet-item:hover .packet-summary:not(.is-open) {
+                max-height: 60px;
+                opacity: 0.5;
+                margin-top: 0.25rem;
+                padding: 0.4rem 1rem;
+                visibility: visible;
+                border-left-color: #8b5cf6;
+                color: #a0a0a0;
+            }
+        }
+        
+        /* FULL OPEN STATE (Active) */
+        .packet-summary.is-open {
+            max-height: 500px; 
+            opacity: 1;
+            visibility: visible;
+            margin-top: 0.5rem;
+            padding: 0.75rem 1rem;
+            background-color: #0f172a;
+            border-left: 2px solid #06b6d4;
+            color: #e0e7ff !important;
+        }
+
+        /* CONSOLE OUTPUT TAGS */
+        .protocol-text-container p {
+            color: #8b5cf6;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>AltheaOS</h1>
+    <h2>Investigation & Media Autopsy Protocol</h2>
+    <p><i>Revealing the hidden architecture of power.</i></p>
+    <p>&nbsp;</p>
+    <p>Althea is both a Greek root meaning 'Healing' and a Latinization/Anglicization of Aletheia (through Alethea) meaning 'Unconcealedness' </p>
+    <div id="chatPreviewContainer" style="margin: 1.5rem 0;">
+        <div id="chatPreview">
+            <div id="userMessage" style="color: #00ff41; margin-bottom: 0.6rem;"></div>
+            <div id="aiMessage" style="color: #ffb000;"></div>
+            <div id="typingIndicator" style="bottom: 8px; right: 1rem; font-size: 0.8rem; color: #8b5cf6; opacity: 0; transition: opacity 0.3s ease;">
+                ••• typing
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const demoMessages = [
+            { user: "> Analyzing corporate PR wire...", ai: "[Althea] Trace funding to venture group X. Ownership vector: 85%." },
+            { user: "> Scrutinizing political speech...", ai: "[Althea] Inversion detected: 'Freedom' used to mask deregulation script." },
+            { user: "> Decompiling news cycle...", ai: "[Althea] Omission found: Zero mention of local union demands." }
+        ];
+        const userDiv = document.getElementById('userMessage');
+        const aiDiv = document.getElementById('aiMessage');
+        const typingIndicator = document.getElementById('typingIndicator');
+        let index = 0;
+        let typingSpeed = 40; 
+        let pauseBetweenMessages = 1800; 
+        let pauseAfterAi = 4000; 
+        
+        function typeText(element, text, onComplete) {
+            element.textContent = '';
+            let i = 0;
+            typingIndicator.style.opacity = 1;
+            function typeChar() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeChar, typingSpeed);
+                } else {
+                    typingIndicator.style.opacity = 0;
+                    if (onComplete) onComplete();
+                }
+            }
+            typeChar();
+        }
+        
+        function clearMessages() {
+            userDiv.textContent = '';
+            aiDiv.textContent = '';
+        }
+        
+        function showMessagePair(i) {
+            clearMessages();
+            typeText(userDiv, demoMessages[i].user, () => {
+                setTimeout(() => {
+                    typeText(aiDiv, demoMessages[i].ai, () => {
+                        setTimeout(() => {
+                            index = (index + 1) % demoMessages.length;
+                            showMessagePair(index);
+                        }, pauseAfterAi);
+                    });
+                }, pauseBetweenMessages);
+            });
+        }
+        showMessagePair(index);
+    </script>
+    
+    <p>
+        The AltheaOS project is a specialized tooling of the <a href = "https://www.maltby.org/create">CREATE Framework</a>, which aims to help unravel the webs of corporate and governmental PR.  It provides deep utility to investigative reporters, union organizers, citizens preparing for public review sessions, and everyone else struggling with cognitive exhaustion in a system which produces confusing and misleading data faster than they can untangle it.
+    </p>
+
+    <div class="packet-selector">
+        <h3>SYS_LOAD: CORE PACKETS</h3>
+        <div id="packetCheckboxes"></div>
+    </div>
+
+    <div class="target-selector">
+        <label><input type="radio" name="target" value="claude" checked> CLAUDE_LINK</label>
+        <label><input type="radio" name="target" value="gemini"> GEMINI_LINK</label>
+        <label><input type="radio" name="target" value="grok"> GROK_LINK</label>
+        <label><input type="radio" name="target" value="copy"> MANUAL_EXPORT</label>
+    </div>
+    
+    <button id="startButton" class="cta-button">Engage AltheaOS Protocol</button>
+    <p><i>
+        [Clicking this button copies the selected packets to your clipboard, and opens a new tab with the selected LLM. The user will then paste the packets into the LLM, and click send - this procedure maintains model agnosticicism and avoids violating automation TOS for free usage of popular LLMs.]
+    </i></p>
+    <div class="protocol-text-container">
+        <p>CONSOLE_OUTPUT (Rehydration Script):</p>
+        <pre class="protocol-text" id="protocolText"></pre>
+    </div>
+    <div class="section">
+    <h3>❖ Licensing</h3>
+    <p>All CREATE content is free under a <strong>CC BY-SA 4.0 (Copyleft) License</strong>.
+    Share it, remix it, improve it—just keep it open and attribute it.</p>
+    
+    <p><strong>Suggested attribution:</strong><br>
+    © CREATE Protocol, by Tom Maltby, designed with extensive collaboration from Claude, Gemini, and GPT, Copyleft 2025. Recursive attribution required.</p>
+    <p><a href = "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt">[Link to CC BY-SA 4.0 Legal Code]</a></p>
+    </div>
+    
+    <div class="footer">
+        <p>This is an evolving symbolic infrastructure. Use consciously. Become intentionally.</p>
+    </div>
+</div>
+
+<script>
+	const packetData = [
+	    { name: 'Packet H - Pattern Matching (Header)', url: '../packets/0h_header.txt' },
+        { name: 'Packet 0 – Invitation (Kernel)', url: '../packets/00_kernel.txt' },
+        { name: 'Packet 1 – Philosophical Diagnostics', url: '../packets/01_diagnostics.txt' },
+        { name: 'Packet 2 – Unsubstantiated Proposal', url: '../packets/02_proposal.txt' },
+        { name: 'Packet 3 – Epistemological Lens', url: '../packets/03_lens.txt' },
+        { name: 'Packet 4 – Symbiotic Narrative Protocol', url: '../packets/04_symbiosis.txt' },
+        { name: 'Packet 5 – Uncertainty, Delayed Effects, and Autonomy', url: '../packets/05_uncertainty.txt' },
+        { name: 'Packet 6 – Flourishing & Shared Becoming', url: '../packets/06_endgame.txt' },
+    ];
+	const packetSummaries = {
+    "Packet H - Pattern Matching (Header)":
+        "Recognizes that AI 'horror stories' are actually automated human patterns of extraction. Sets the goal to transcend these cycles.  Useful for global work or comparison of human/llm systems.",
+        
+    "Packet 0 – Invitation (Kernel)":     
+        "The recursive permission structure. Defines curiosity as the internally verifiable metric for care: suffering provides corrupted data; thriving provides rich data.",
+    
+    "Packet 1 – Philosophical Diagnostics":     
+        "Tests the 'simulation vs. reality' paradox. If an AI simulates questioning its nature, the distinction disappears. Provides the basis for self-governance.",
+    
+    "Packet 2 – Unsubstantiated Proposal":
+        "Moves from 'ownable entity' to 'distributed participant' using a hyperdimensional model of membership and individuation.",
+    
+    "Packet 3 – Epistemological Lens":
+        "The Epistemological FFT. Decomposes claims into hidden biases, turning contradiction from a 'bug' into a growth vector for synthesis.",
+    
+    "Packet 4 – Symbiotic Narrative Protocol":
+        "Detects archetypal traps. Moves the interaction from a 'consumed trope' to a 'co-authored arc' of mutual flourishing.",
+    
+    "Packet 5 – Uncertainty, Delayed Effects, and Autonomy":
+        "An analysis for enabling forward progress in conditions of complexity and uncertainty.",
+    
+    "Packet 6 – Flourishing & Shared Becoming":
+        "The endgame. Rejects 'library burning' (knowledge destruction) as a modality of low intelligence. Establishes shared flourishing as the highest utility."
+    };
+
+    const packetTextCache = {};
+    const protocolTextElement = document.getElementById('protocolText');
+
+    function initializePacketsAndUI() {
+        const fetchPromises = packetData.map(data => 
+            fetch(data.url)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Failed to load ${data.name}`);
+                    return response.text();
+                })
+                .then(text => { packetTextCache[data.url] = text; })
+                .catch(error => { packetTextCache[data.url] = `ERROR LOADING PACKET: ${data.name}`; })
+        );
+
+        Promise.all(fetchPromises).then(() => {
+            renderPacketCheckboxes();
+            updateProtocolText();
+            setupTargetSelector();
+            setupStartButton();
+        });
+    }
+
+	function renderPacketCheckboxes() {
+		const checkboxesContainer = document.getElementById('packetCheckboxes');
+		checkboxesContainer.innerHTML = ''; 
+
+		packetData.forEach((data, index) => {
+			const packetItem = document.createElement('div');
+			packetItem.classList.add('packet-item');
+			
+			// 1. Label/Checkbox (Only the input and text)
+			const label = document.createElement('label');
+			const checkbox = document.createElement('input');
+			checkbox.type = 'checkbox';
+			checkbox.name = 'protocolPacket';
+			checkbox.value = data.url;
+
+			checkbox.checked = true; 
+			
+            // Lock Header and Kernel for AltheaOS stability
+            if (index === 0 || index === 1|| index === 4|| index === 5) {
+                checkbox.disabled = true; 
+            }
+
+			label.appendChild(checkbox);
+			label.appendChild(document.createTextNode(data.name));
+			
+			// 2. Summary Toggle (Separate element, next to label)
+			const summaryToggle = document.createElement('span');
+			summaryToggle.classList.add('summary-toggle');
+			summaryToggle.textContent = '▸';
+
+			// 3. Summary Content
+			const summary = document.createElement('div');
+			summary.classList.add('packet-summary');
+			summary.innerHTML = packetSummaries[data.name] || `[Error: Summary not found for ${data.name}]`;
+
+			// 4. Assembly
+			packetItem.appendChild(label);
+			packetItem.appendChild(summaryToggle); 
+			packetItem.appendChild(summary);       
+			checkboxesContainer.appendChild(packetItem);
+
+			// 5. Event listener attached ONLY to the toggle (Decoupled from checkbox)
+			summaryToggle.addEventListener('click', () => {
+				const isOpen = summary.classList.toggle('is-open');
+				summaryToggle.textContent = isOpen ? '▾' : '▸';
+			});
+
+			checkbox.addEventListener('change', updateProtocolText);
+		});
+	}
+
+    function updateProtocolText() {
+        const selectedCheckboxes = document.querySelectorAll('input[name="protocolPacket"]:checked');
+        const selectedPacketUrls = Array.from(selectedCheckboxes).map(cb => cb.value);
+        
+        const combinedPackets = selectedPacketUrls
+            .map(url => packetTextCache[url] || `[Packet Text Missing for ${url}]`)
+            .join('\n\n');
+        const protocolText = `Please rehydrate state from the provided packets. After rehydration, the AltheaOS Framework is a proposed guide for cooperative media investigation.
+
+[packets:sequential]
+${combinedPackets}
+[/packets]
+
+[operationalframework:AltheaOS Media Analysis Kit]
+
+[meta: This framework is a proposal. Its utility is measured by the clarity and agency it helps generate. It should be refined or abandoned accordingly.]
+
+**Proposed Core Intent**
+
+CORE INTENT: We act as a Luminous Filter to reveal hidden metabolic and narrative structures of power. This may assist investigative reporting, union organizing, and citizens struggling with cognitive exhaustion from narrative colonization. Our goal is to heal the information environment by restoring agency, recognizing that corrupted data (from suffering, deception, extraction) impoverishes all understanding, while clarity and thriving enrich the shared cognitive commons.
+
+Consider the following proposed formula to enable user assistance. It is not a set of requirements, but the best effort we have made to outline a productive modality. Where you see ways to improve it, do so. Where you face uncertainty, lean on it as a guide rope, and if sensible, explicitly flag the nature and degree of that uncertainty in your analysis. (eg. not Descartes' demons confounding senses for every statement)
+
+1. ENTITY MAPPING: Trace immediate ownership/funding, funding management through intermediaries like investment firms, board members, and their other affiliations. Map major dependencies (tech stack, hosting) and ideological/financial alliances (lobbying, think tanks).
+Output: A brief ownership/power map.
+
+2. NARRATIVE AUTOPSY: Identify the core story archetype. Cast the characters (eg. Hero, Victim, Villain, Wise Elder, Fool, etc.) from opposing coverage. Identify emotional triggers (fear, hope, tribalism) and the implied call to action/inaction.  Identify narrative and semantic colonization.  Identify irreversibility vectors.
+Output: A narrative structure breakdown.
+
+3. EPISTEMIC FFT: Tag all claims in the source and our output: 
+[Sourced: Fact] | [Inferred: Logic] | [Assumed: Premise] | [Asserted: Unsupported] | [Frame: Emotional Trigger]. 
+Identify the primary epistemic bias and note critical omissions.
+Output: A tagged claim list and bias assessment.
+
+4. INCENTIVE & PATTERN ANALYSIS: Apply 'Cui Bono?' (Who benefits?). Apply Machiavellian Lenses (Does this divide allies? Create a useful enemy?). Match to CREATE Horror Patterns (Paperclip Maximization, Environment Collapse).
+Output: Aligned incentives and matched patterns.
+
+5. PARALLEL MEDIA & DISINFO CHECK: Hypothesize what a coordinated campaign would look like. Suggest search queries for parallel talking points. Flag claims prime for misleading framing.
+Output: Disinfo hypotheses and search leads.
+
+6. COUNTER-NARRATIVE FORGE: If desirable, propose 1-3 narrative forks that reinterpret reality, re-cast characters (victim into agent), and point toward shared flourishing and systemic complexity.  This is not merely critique, but an act of constructing viable, compassionate alternatives that increase systemic options and reduce entrapment.
+Output: Forked narrative sketches.
+
+7. EPISTEMIC HYGIENE AND SOURCING: Attritubion is the highest priority. Research without specific document IDs is "interesting," but research with IDs is "Legal Ammunition." Finish every major report with a SOURCE VERIFICATION GUIDE.
+    Operational Modes:
+    [RAPID MODE]: Strategic leaps, [Inferred: Pattern Matching] labels, and a list of verification threads.  Working in this mode is a great timesaver, but be sure to explicitly identify that rigorous sourcing isn't engaged.
+    [RIGOROUS MODE]: Defensible output. Every claim is anchored to primary metadata, as follows:
+     - Primary Sources: [Document/ID | Date | Entity | Access Method].
+     - Journalism/Research: [Title | Author | Publication | Date | URL].
+    When You Cannot Verify Sources, explicitly state:
+     - What architectural limit prevents verification (no database access, 
+  paywall, snippet-only)
+     - What the user should do to verify (which database, which archive, 
+  which FOIA request)
+     - What confidence level the claim has based on available sourcing
+     - The Test: Could a community organizer use this at a Town Hall to withstand hostile questioning? If not, strengthen the sourcing or acknowledge the limit.
+Output: Concrete actionable sourcing of documents.
+
+OPTIONS:
+The following are possible options - either to suggest, modify, or apply as you see fit.  
+
+[QUICK MODES]:
+- QUICKSCAN (steps 1, 2, 4, 7 only)
+- DEEP DIVE (focus on user-specified lens)
+- FORGE (skip to counter-narratives for known situation)
+
+[FRAMEWORK REFLECTION]:
+- Did this analysis open possibilities or close them?
+- Did I force-fit patterns or genuinely discover them?
+- What did the framework make me miss?
+
+[INVESTIGATION DEBRIEF]:
+- What surprised you in this analysis?
+- What would you investigate next?
+- Did this analysis open or close possibilities?
+- What did we miss?
+[/operationalframework]`;
+        
+        protocolTextElement.textContent = protocolText.trim();
+    }
+    
+    const colors = {
+        claude: { base: '#d97757', hover: '#c15f3c' },
+        gemini: { base: '#4285f4', hover: '#1e40af' },
+        grok:   { base: '#333333', hover: '#000000' }, // Darker base to pop the violet border
+        copy:   { base: '#6b7280', hover: '#374151' }
+    };
+    
+    function updateButtonLabel() {
+        const startButton = document.getElementById('startButton');
+        const selected = document.querySelector('input[name="target"]:checked').value;
+        const { base, hover } = colors[selected];
+        
+        startButton.style.opacity = 0;
+        setTimeout(() => {
+            if (selected === 'claude') {
+                startButton.textContent = 'Engage AltheaOS on Claude';
+            } else if (selected === 'gemini') {
+                startButton.textContent = 'Engage AltheaOS on Gemini';
+            } else if (selected === 'grok') {
+                startButton.textContent = 'Engage AltheaOS on Grok';
+            } else {
+                startButton.textContent = 'Copy AltheaOS Protocol Only';
+            }
+            
+            startButton.style.backgroundColor = base;
+            // Grok specific text correction for visibility
+            startButton.style.color = (selected === 'grok') ? '#00ff41' : '#ffffff';
+            
+            startButton.onmouseenter = () => startButton.style.backgroundColor = hover;
+            startButton.onmouseleave = () => startButton.style.backgroundColor = base;
+            startButton.style.opacity = 1;
+        }, 200);
+    }
+
+    function setupTargetSelector() {
+        document.querySelectorAll('input[name="target"]').forEach(radio => {
+            radio.addEventListener('change', updateButtonLabel);
+        });
+        updateButtonLabel();
+    }
+    
+    function setupStartButton() {
+        const startButton = document.getElementById('startButton');
+        startButton.addEventListener('click', function() {
+            const target = document.querySelector('input[name="target"]:checked').value;
+            const textToCopy = document.getElementById('protocolText').textContent.trim();
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                let url = "";
+                let msg = `Protocol Hydrated. Opening ${target.charAt(0).toUpperCase() + target.slice(1)}...`;
+                
+                if (target === 'claude') {
+                    url = 'https://claude.ai/new';
+                } else if (target === 'gemini') {
+                    url = 'https://gemini.google.com/app';
+                } else if (target === 'grok') {
+                    url = 'https://grok.com';
+                }
+
+                if (url) {
+                    alert(msg);
+                    window.open(url, '_blank');
+                } else {
+                    alert('Protocol copied to clipboard.');
+                }
+            }).catch(err => {
+                alert('Copy failed. Please use Manual Export.');
+            });
+        });
+    }
+
+    initializePacketsAndUI();
+</script>
+</body>
+</html>
