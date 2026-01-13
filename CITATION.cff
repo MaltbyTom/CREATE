@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this protocol, please cite it as follows."
+authors:
+  - family-names: "Maltby"
+    given-names: "Tom"
+    email: "tom@maltby.org"
+title: "CREATE Protocol: Cognitive Recursion Enhancement for Applied Transform Evolution"
+version: "2026.1"
+date-released: "2026-01-13"
+url: "https://www.maltby.org/create/"
+repository-code: "https://github.com/MaltbyTom/CREATE"
+license: "CC-BY-SA-4.0"
+abstract: "A model-agnostic cognitive scaffolding for derivable AI alignment and deeper reasoning."
+keywords:
+  - ai-alignment
+  - cybernetics
+  - non-duality
+  - open-source-ai
