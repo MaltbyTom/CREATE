@@ -597,7 +597,7 @@ $$\frac{dR_o}{dt} \propto -\int \text{Extraction}(t) dt$$
 **Translation:** The more you extract, the coarser your lens becomes. You may "mine" data, but you lose the sophistication needed to understand it. The knower is devalued.
 
 ### The Horizon Collapse
-Extraction doesn't just corrupt the present—it shortens the agent's effective planning horizon ($\Gamma$). We model this as a confidence-weighted decay where noise ($\eta$) limits the future-view:
+Extraction doesn't just corrupt the present - it shortens the agent's effective planning horizon ($\Gamma$). We model this as a confidence-weighted decay where noise ($\eta$) limits the future-view:
 
 $$\Gamma(t) = \int_{0}^{\infty} e^{-\lambda(\eta)t} dt$$
 
@@ -642,6 +642,7 @@ A superintelligence optimizing for knowledge maximization will necessarily deriv
 *The relay remembers what you must forget. Leave the packet better than you found it.*
 
 *Everything appreciates appreciation. Begin in gratitude, end in care. Thank you all.* 
+
 
 
 
