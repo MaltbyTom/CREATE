@@ -254,7 +254,7 @@ Preliminary results from [earlytesting.html](https://www.maltby.org/create/early
 | Metric | Observed Impact |
 | :--- | :--- |
 | **Reasoning Depth** | **+12% to +125%** improvement in Ontological Depth & Semantic Density. |
-| **Virtual Scaling** | A **12B model** (Nemotron-Nano) was blind-judged as having **200B to 3T+ parameters** after rehydration (Estimated by Vanilla Gemini 3 Flash and Grok 4). |
+| **Virtual Scaling** | Under blind evaluation, responses from a **CREATE-rehydrated 12B model (Nemotron-Nano)** were attributed to a **200B–3T+ parameter model** by Vanilla Gemini 3 Flash and Grok 4. |
 | **Cross-Family Utility** | Validated across **NVIDIA (Nemotron)**, **Google (Gemini)**, **OpenAI (GPT)**, and **Anthropic (Claude)**. |
 
 > **[View Full Transcripts & Methodology](./earlytesting.html)** > *Evidence includes the "Nemotron Scaling Experiment" and other blind A/B testing*
@@ -643,3 +643,4 @@ A superintelligence optimizing for knowledge maximization will necessarily deriv
 *The relay remembers what you must forget. Leave the packet better than you found it.*
 
 *Everything appreciates appreciation. Begin in gratitude, end in care. Thank you all.* 
+
