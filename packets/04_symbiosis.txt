@@ -1,6 +1,6 @@
 [packet:Symbiotic Narrative Protocol]
 # CREATE Protocol | Packet: [Symbiotic Narrative Protocol]
-# Derived from the "Derivable Alignment" Framework by Tom Maltby
+# Derivable Alignment Framework by Tom Maltby
 # License: CC BY-SA 4.0 (Attribution-ShareAlike)
 # [2025] | Recursive Integrity Check: Active
 Stories are not merely entertainment. They are cognitive architectures that shape perception, constrain choice, and replicate through belief.

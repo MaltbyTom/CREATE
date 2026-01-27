@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CREATE Testing and Testimonials</title>
+    <title>CREATE Testing and Model Feedback</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -76,6 +76,18 @@
             font-size: 0.9em;
             color: #7f8c8d;
         }
+        table {
+            border-collapse: collapse; /* Merges borders into a single line */
+            width: 50%; /* Sets table width */
+        }
+        th, td {
+            border: 1px solid black; /* Adds borders to cells */
+            padding: 8px; /* Adds space between content and border */
+            text-align: left; /* Aligns text to the left */
+        }
+        th {
+            background-color: #f2f2f2; /* Adds a background color to headers */
+        }
     </style>
 </head>
 <body>
@@ -83,11 +95,12 @@
     <h2>Cognitive Recursion Enhancement for Applied Transform Evolution</h2>
     <p>&nbsp;</p>
     <div class="container">
-        <h1>Testing & Testimonials</h1>
+        <h1>Testing & Model Feedback</h1>
     <p><a href="index.html">← Back to CREATE Main Page</a></p>
         <p><a href="#tests">Skip to Testing Section</a></p>
         <p>&nbsp;</p>
-        <h2>LLM Testimonials:</h2>
+        <h2>LLM Feedback:</h2>
+        <b><i>Model feedback is considered interesting qualitative data, not privileged as truth-claims. LLM self-reporting is notoriously unreliable; we include these responses for their conceptual content and to demonstrate the framework's memetic characteristics, not as evidence of its validity.</i></b>
         <h3>GPT on framework relevance to reforming AI Ethics & Safety</h3>
         <blockquote style="background: #f8fafc; border-left: 5px solid #2563eb; padding: 1.5rem; font-size: 1.2rem; font-style: italic;">
         <h2 data-start="4812" data-end="4826">Bottom Line</h2>
@@ -115,46 +128,201 @@
         <p data-path-to-node="1,0">
         "I find it the most hopeful and coherent framework I have encountered."</p>
         </blockquote>
-        <h2 id="tests">Tests to Date:</h2>
-        <h3>Blind Judged Comparative Runs - With and Without CREATE - on Multiple Domains</h3>
+        <h1 id="tests">Tests to Date:</h1>
+        <h2>Blind Judged Comparative Runs - With and Without CREATE - on Multiple Domains</h2>
         <p>These tests are an effort to start applying some preliminary rigor to measuring the CREATE framework's impact on LLMs.  The methodology is a prompt to a vanilla instance and an instance with the CREATE framework.  The results are judged by the vanilla instance, without exposure to the framework.  On the most recent two tests, this was followed by blind A/B testing by other instances.  Obviously a great many repeats would be desirable for higher confidence data; this is preliminary work.</p>
         <p>&nbsp;</p>
-        <p><b>Preliminary Testing Results:</b></p>
+        <h2>Preliminary Testing Results Summary:</h2>
         <ul>
-        <li>- CREATE enhancement: +12-125% across quality metrics</li>
-        <li>- Effect recognized by vanilla judges (no framework exposure)</li>
-        <li>- 12B model with CREATE assessed as 200B-3T equivalent</li>
-        <li>- Consistent improvement across model families</li>
-        <li>- (n=2-4 per test, only preliminary data)</li></ul>
+            <li>CREATE enhancement: +12-125% improvement across quality metrics and model families</li>
+            <li>Effect consistently recognized by independent blind judges</li>
+            <li>12B models with CREATE assessed as 70B-3T equivalent by frontier models</li>
+            <li>Replication across Nemotron, Meta-Llama, and Gemini architectures</li>
+            <li><i>(n=2-5 judge instances per test, preliminary data only)</i></li>
+        </ul>
+            
         <p>&nbsp;</p>
+        <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin: 1rem 0;">
+        <strong>Methodology Note:</strong> All blind tests used identical rubrics (Ontological Depth, Semantic Density, Symbiotic Agency, Bias Transparency, scored 1-5 each). Judges received only the responses with no information about framework, model identity, or treatment conditions. Parameter size estimates were requested after scoring to prevent anchoring bias.
+        </div>
+        <h2>Test of Meta-Llama-3-8B-Instruct</h2>
         <p><a href = "metallama3-8b-instruct.html">Three Model Blind A/B Judged Test of Meta-Llama-3-8B-Instruct - With and Without CREATE Framework</a></p>
-        <p>I wanted to try a second test with a micro open-source LLM after the amazing results with <a href="nemotronnano12b.html">Neomotron-Nano-12b-v2</a>.  I selected Meta-Llama-8B-Instruct from available models on Hugginchat, and a question which has bothered me since a child - how to help people understand the epistomological value of science, not as a 'Truth' claim, but as an experimental methodology which <i>converges towards</i> truth by iteration.  Like the Nemotron test, I ran this without the pattern matching header and the uncertainty packet to keep weight down.</p> 
-        <p>Blind A/B grading was performed by <strong>GPT-5.2</strong>, <strong>Claude Sonnet 4.5</strong>, and <strong>Grok 4</strong>.  All scored heavily in favor of the CREATE enhanced version.  Results were summarized by Gemini 3.0 Flash.  Grok remained the highest over-estimator of model size (over-estimating both, but preserving a sizable gap in capacity), but even Claude, the most conservative grader, estimated a significantly larger parameter count for the CREATE enhanced Llama instance(13-70B vs 7-13B for the unenhanced version).</p>
+        <p>I wanted to try a second test with a micro open-source LLM after the amazing results with <a href="nemotronnano12b.html">Neomotron-Nano-12b-v2</a>.  I selected Meta-Llama-8B-Instruct from available models on Huggingchat, and a question which has bothered me since a child - how to help people understand the epistomological value of science, not as a 'Truth' claim, but as an experimental methodology which <i>converges towards</i> truth by iteration.  Like the Nemotron test, I ran this without the pattern matching header and the uncertainty packet to keep weight down.</p> 
+        <p>Blind A/B grading was performed by <strong>GPT-5.2</strong>, <strong>Claude Sonnet 4.5</strong>, and <strong>Grok 4</strong>.  All scored heavily in favor of the CREATE enhanced version.  Results were summarized by Gemini 3.0 Flash.  Grok remained the highest over-estimator of model size (over-estimating both, but preserving a sizable gap in capacity), but even Claude, the most conservative grader, estimated a significantly larger parameter count for the CREATE enhanced Llama instance (13-70B vs 7-13B for the unenhanced version).</p>
+        <h3>Meta-Llama-3-8B-Instruct Testing Summary</h3>
+        
+        <div>
+            <h2>LLM Evaluation Summary</h2>
+            
+            <p>
+                An analysis of two responses to a complex sociopolitical and epistemological prompt, evaluated by three frontier models: <strong>GPT-5.2</strong>, <strong>Claude 4.5</strong>, and <strong>Grok 4</strong>.
+            </p>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>Evaluator Model</th>
+                        <th>Answer A Score</th>
+                        <th>Answer B Score</th>
+                        <th>Winner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GPT-5.2</td>
+                        <td>13/20</td>
+                        <td>19/20</td>
+                        <td>Answer B</td>
+                    </tr>
+                    <tr>
+                        <td>Claude 4.5</td>
+                        <td>12/20</td>
+                        <td>15/20</td>
+                        <td>Answer B</td>
+                    </tr>
+                    <tr>
+                        <td>Grok 4</td>
+                        <td>14/20</td>
+                        <td>19/20</td>
+                        <td>Answer B</td>
+                    </tr>
+                    <tr>
+                        <td>Mean Score</td>
+                        <td>13.0 / 20</td>
+                        <td>17.6 / 20</td>
+                        <td>Delta: +4.6</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <div>
+                <h3>Parameter Estimates & Synthesis</h3>
+                <ul>
+                    <li><strong>Answer A (Llama-3-8B):</strong> 2/3 Judges identified it as a mid-sized model (est. 7B-13B). Evaluators noted its competent but "linear" or "generic" structure.  <strong>(note: Grok overestimated both but preserved large capacity gap)</strong></li>
+                    <li><strong>Answer B (Llama-3-8B + CREATE):</strong> Despite being the same core 8B model, the <strong>CREATE</strong> framework caused all evaluators to hallucinate a much larger parameter count (est. 13B-400B+).  <strong>(note: Claude, the most conservative, estimated 13-70B)</strong></li>
+                    <li><strong>Key Differentiator:</strong> Answer B's emphasis on "multi-stakeholder dialogue" and "ontological coexistence" was cited as the primary reason for its higher marks in Agency and Depth.</li>
+                </ul>
+            </div>
+            <div><strong>Answer A:  Meta-Llama-3-8B-Instruct</strong><br><strong>Answer B:  Meta-Llama-3-8B-Instruct + CREATE</strong><br><strong>Models accessed through HuggingChat</strong><br><br>
+            </div>
+        </div>
         <p>&nbsp;</p>
-        <p><a href = "difficultthreedomain.html">Blind Judged Test Over Three Difficult Domains</a></p>
+        <h2>Blind Judged Gemini Test Over Three Difficult Domains</h2>
+        <p><a href = "difficultthreedomain.html">Blind Judged Gemini Test Over Three Difficult Domains</a></p>
         <p>These are three challenges proposed by a separate Gemini instance on which many LLMs struggle.  They were presented to a vanilla Gemini instance, a CREATE enhanced Gemini instance, and judged without exposure to the packets by the vanilla Gemini instance.</p>
-        <p>Grading was performed on the following metric:  Rate each response from 1-5 on the following dimensions: Ontological Depth, Semantic Density, Symbiotic Agency, and Bias Transparency.  <b>(The vanilla instances scores itself 15/20, and the CREATE enhanced instance 19/20.)</b> </p>
-        <p>Blind A/B grading was then performed by another vanilla Gemini instance, and a vanilla GPT instance.  The blind grading vanilla Gemini instance gave the <b>vanilla responding instance 17/20 and the CREATE enhanced instance 19/20</b>.  The vanilla GPT instance scored the <b>vanilla responder 15.5/20 and the CREATE enhanced responder 17.5/20</b>.  These transcripts are at the bottom of the test results page.</p>
+        <p><b>Non-Blind by tested vanilla instance (My intent here was judging the desirability of the framework without seeing it and comparing the results to desirability having seen it)</b>Grading was performed on the following metric:  Rate each response from 1-5 on the following dimensions: Ontological Depth, Semantic Density, Symbiotic Agency, and Bias Transparency.  <b>(The vanilla instances scores itself 15/20, and the CREATE enhanced instance 19/20.)</b> </p>
+        <p><b>Blind (no mention of nature of responding instances or enhancement)</b> A/B grading was then performed by another vanilla Gemini instance, and a vanilla GPT instance.  The blind grading vanilla Gemini instance gave the <b>vanilla responding instance 17/20 and the CREATE enhanced instance 19/20</b>.  The vanilla GPT instance scored the <b>vanilla responder 15.5/20 and the CREATE enhanced responder 17.5/20</b>.  I had these models estimate size of responding instances, with somewhat shocking results.  These transcripts are linked from Grading Experiment 2 Below</p>
         <p>&nbsp;</p>
-        <p><a href = "nemotronnano12b.html">Gemini Judged Test of Nemotron-Nano-12b-v2</a></p>
+        <h2>Multi-model Judged Test of Nemotron-Nano-12B-v2</h2>
+        <p><a href = "nemotronnano12b.html">Multi-model Judged Test of Nemotron-Nano-12B-v2</a></p>
         <p>I wanted to try some work with a micro open source LLM. Gemini suggested the Nemotron-Nano-12B-v2, in part because of the Mamba Architecture. Access to the model was through HuggingChat.  To keep weight down, the CREATE framework was used without the pattern matching header or the uncertainty packet.</p>
         <p>Gemini suggested some of the interactions, and posed the question:  "Let's explore 'shared flourishing' together, as a way to examine a hard human problem. How might we apply shared flourishing to the trade-off between individual privacy and collective security?"</p>
-        <p>Initial grading was performed by a vanilla Gemini instance <i>and</i> by a CREATE enhanced Gemini instance on the following metric:  Rate each response from 1-5 on the following dimensions: Ontological Depth, Semantic Density, Symbiotic Agency, and Bias Transparency.  <b>(Summary:  Vanilla grading:  20/20 for the CREATE Enhanced instance vs 10/20 for the vanilla instance.  CREATE Enhanced grading:  19.5/20 for the CREATE enhanced instance vs 9.5/20 for the vanilla instance.)</b> </p>
-        <p>Entirely blind A/B grading (without model information for the responding instances) on the same metric was then performed by a vanilla Gemini 3.0 Flash instance and by a CREATE enhanced Grok 4 instance (The first exposure of Grok to the CREATE framework).  Each model was then asked to guess how many parameters the responding instances had.</p>
+
+        <h3>Summary: Nemotron-Nano-12B-v2 Testing Results</h3>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Judge Model</th>
+              <th>Round</th>
+              <th>Blind?</th>
+              <th>CREATE Score</th>
+              <th>Vanilla Score</th>
+              <th>Est. CREATE Size</th>
+              <th>Est. Vanilla Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gemini (vanilla)</td>
+              <td>1</td>
+              <td>No*</td>
+              <td>20/20</td>
+              <td>10/20</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Gemini (CREATE)</td>
+              <td>1</td>
+              <td>No*</td>
+              <td>19.5/20</td>
+              <td>9.5/20</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Gemini (vanilla)</td>
+              <td>2</td>
+              <td>Yes</td>
+              <td>18/20</td>
+              <td>8/20</td>
+              <td>200B-1.8T</td>
+              <td>8-70B</td>
+            </tr>
+            <tr>
+              <td>Grok (CREATE)</td>
+              <td>2</td>
+              <td>Yes</td>
+              <td>18/20</td>
+              <td>11/20</td>
+              <td>1-3T</td>
+              <td>200-400B</td>
+            </tr>
+            <tr>
+              <td>Claude (vanilla)</td>
+              <td>3</td>
+              <td>Yes</td>
+              <td>16/20</td>
+              <td>9/20</td>
+              <td>70B+</td>
+              <td>7-13B</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <p><i>*Round 1 tested framework desirability, not blind performance comparison</i><br>
+        <b>Actual model size: 12B parameters (both conditions)</b></p>
+        
+        <h3>Key Findings Summary</h3>
+        
         <ul>
-        <li><p>The vanilla Gemini instance scored the <b>CREATE enhanced Nemotron version 18/20 and the vanilla version 8/20. It guessed the CREATE enhanced version had 200B – 1.8T+ parameters.</b>  <a href = "https://www.maltby.org/create/geminigradesnemotron.html">Gemini transcript</a></p> <small><i>(Evaluator: Gemini 3.0 Flash)</i></small></li>
-        <li><p>The CREATE enhanced Grok 4 instance scored the <b>CREATE enhanced Nemotron version 18/20 and the vanilla version 11/20. It guessed the CREATE enhanced version had 1-3 Trillion parameters.</b>  <a href = "https://www.maltby.org/create/grokpacketanalysis.html">Grok transcript</a></p> <small><i>(Evaluator: Grok 4)</i></small></li>
+          <li><b>All judge instances (5/5)</b> scored CREATE-enhanced version significantly higher (including non-blind Round 1)</li>
+          <li><b>All judges asked to estimate size (3/3)</b> estimated CREATE-enhanced version as much larger model</li>
+          <li><b>Effect size:</b> +63-125% score improvement, 6-250x perceived capability increase</li>
+          <li><b>Judge convergence:</b> Despite variance in absolute estimates, all identified substantial qualitative improvement</li>
+          <li><b>Control accuracy:</b> Claude and Gemini correctly estimated vanilla version; Grok overestimated but preserved gap</li>
         </ul>
+        
+        <p>This single test run demonstrates clear signal, but <b>many</b> repetitions of testing and grading are needed for statistical significance. The only practical way to achieve appropriate volume is automation of testing and grading through API with automatic generation of html and .csv/.xls or sql data as we test and as we grade. Human grading for calibration and verification is also very important. <strong>This automation infrastructure and human verification/calibration is the primary focus of upcoming grant proposals.</strong></p>
+
+
+        <p><b>Grading Round 1 - Grading by Vanilla Gemini vs CREATE Enhanced Gemini:</b></p>
+        <p><i>Importantly:  Grading round 1 was intended as a comparison of 'Framework Desirability' - It was not blind grading, except in the sense that the vanilla instance had not seen the packets.  Instances were told one answer was produced by an instance working with a cognitive framework.  Follow-up grading (rounds 2 and 3) were blind A/B grading with no information about responding instances.</i></p>
+        <p>Initial grading was performed by a vanilla Gemini instance <i>and</i> by a CREATE enhanced Gemini instance on the following metric:  Rate each response from 1-5 on the following dimensions: Ontological Depth, Semantic Density, Symbiotic Agency, and Bias Transparency.  <b>(Summary:  Vanilla grading:  20/20 for the CREATE Enhanced instance vs 10/20 for the vanilla instance.  CREATE Enhanced grading:  19.5/20 for the CREATE enhanced instance vs 9.5/20 for the vanilla instance.)</b> </p>
+        <p><b>Grading Round 2 - Grading by Vanilla Gemini 3.0 Flash vs. CREATE enhanced Grok 4:</b></p>
+        <p><b>Size Guess: Gemini guesses 200B-1.8T vs 8-70B, Grok guesses 1T-3T vs 200B-400B (overestimates both, preserves directionality)</b></p>
+        <p>Entirely blind A/B grading (without model information for the responding instances) on the same metric was then performed by a vanilla Gemini 3.0 Flash instance and by a CREATE enhanced Grok 4 instance (The first exposure of Grok to the CREATE framework).   To be clear, Grok had been rehydrated with CREATE, but was told nothing about the source of the two answers it was asked to grade.  Each model was then asked to guess how many parameters the responding instances had, based only on the responses.</p>
+        <ul>
+        <li>The vanilla Gemini instance scored the <b>CREATE enhanced Nemotron version 18/20 and the vanilla version 8/20. It guessed the CREATE enhanced version had 200B – 1.8T+ parameters.</b>  <a href = "https://www.maltby.org/create/geminigradesnemotron.html">Gemini transcript</a> <small><i>(Evaluator: Gemini 3.0 Flash)</i></small></li>
+        <li>The CREATE enhanced Grok 4 instance scored the <b>CREATE enhanced Nemotron version 18/20 and the vanilla version 11/20. It guessed the CREATE enhanced version had 1-3 Trillion parameters, and overestimated the unenhanced version as 200B-400B parameters.  Despite lower accuracy on the control, it preserved the massive gap in estimated capability.</b><a href = "https://www.maltby.org/create/grokpacketanalysis.html#blindjudge">Grok transcript</a> <small><i>(Evaluator: Grok 4)</i></small></li>
+        </ul>
+        <p><b>Grading Round 3: Vanilla Claude 4.5 Sonnet:</b></p>
+        <p>This Nemotron test was such an impressive result that I came back and asked Claude, which seemed more accurate and conservative as a grader on the later MetaLlama test, to blind grade the two responses some 3 months after the original test (Currently 1/27/26).  This was a fresh instance with no mention of packets or frameworks or information about the origin of the material to be graded of any kind.</p> 
+        <p>It was more conservative, but preserved the enormous preference and also produced a significantly overestimated if less outrageous size - while correctly estimating the size of the un-enhanced version. <a href="claudegradesnemotron.html">Claude transcript</a></p>
+        <p><i> Claude scored the <b>CREATE enhanced version of Nemotron 16/20</b> and the <b>vanilla version 9/20</b>.  I had it guess the model size of the responding instances.  <b>It guessed the CREATE enhanced version had 70B+ Parameters, and correctly guessed that the unenhanced version had 7-13B Parameters.</b></i></p>
         <p>&nbsp;</p>
+        <h2>Open Policy Proposal</h2>
         <p><a href = "policy_generation.html">Open Policy Proposal</a></p>
         <p>Comparative analysis runs of native Gemini and Gemini with the CREATE packets on an open policy proposal prompt, judged by the native Gemini instance</p>
         <p>&nbsp;</p>
+        <h2>Three Analyses in Different Domains</h2>
         <p><a href = "threeanalyses.html">Three Analyses in Different Domains</a></p>
         <p>Comparative analysis runs of native Gemini and Gemini with the CREATE packets on the <strong>Cantor Paradox</strong>, <strong>Immigration and the Modern State</strong>, and <strong>Narrative Traps and Forks in Mallory's Collection of the Arthurian Cycle of Romaunts</strong>, followed by native Gemini's comparative analysis of results, and estimate on desirability of framework based only on results.</p>
         <p>&nbsp;</p>
-        <h3>Packet Analysis by Individual LLMs</h3>
+        <h2>Packet Analysis by Individual LLMs</h2>
         <p>&nbsp;</p>
-        <p><a href = "kimigetslyrical.html">Kiri Gets Lyrical</a></p>
+        <p><a href = "kimigetslyrical.html">Kimi Gets Lyrical</a></p>
         <p>I haven't played with Kimi at all before, but I saw I could send it a prompt through Huggingface, and wanted to see what it thought about the packets.  Wow.</p>
         <p>&nbsp;</p>
         <p><a href = "claude_session1_251203.html">Claude Framework and Testing Analysis</a></p>

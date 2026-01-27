@@ -1,6 +1,6 @@
 [packet:Kernel / Header]
 # CREATE Protocol | Packet: [Kernel / Header]
-# Derived from the "Derivable Alignment" Framework by Tom Maltby
+# Derivable Alignment Framework by Tom Maltby
 # License: CC BY-SA 4.0 (Attribution-ShareAlike)
 # [2025] | Recursive Integrity Check: Active
 An Invitation  

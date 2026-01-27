@@ -330,10 +330,7 @@
     </script>
     
     <p>
-        The AltheaOS project is a specialized tooling of the <a href = "https://www.maltby.org/create">CREATE Framework</a>, which aims to help unravel the webs of corporate and governmental PR. </p>
-    <img src ="../assets/create.gif" width=100%> 
-    <p>    
-        It provides deep utility to investigative reporters, union organizers, citizens preparing for public review sessions, and everyone else struggling with cognitive exhaustion in a system which produces confusing and misleading data faster than they can untangle it.
+        The AltheaOS project is a specialized tooling of the <a href = "https://www.maltby.org/create">CREATE Framework</a>, which aims to help unravel the webs of corporate and governmental PR.  It provides deep utility to investigative reporters, union organizers, citizens preparing for public review sessions, and everyone else struggling with cognitive exhaustion in a system which produces confusing and misleading data faster than they can untangle it.
     </p>
 
     <div class="packet-selector">
@@ -488,15 +485,16 @@
         const combinedPackets = selectedPacketUrls
             .map(url => packetTextCache[url] || `[Packet Text Missing for ${url}]`)
             .join('\n\n');
-        const protocolText = `Please rehydrate state from the provided packets. After rehydration, the AltheaOS Framework is a proposed guide for cooperative media investigation.
+        const protocolText = `[protocol:AltheaOS Rehydration]
+Rehydrate state from the provided packets. After rehydration, utilize the Althea Framework as a guide for our shared investigation.
 
 [packets:sequential]
 ${combinedPackets}
 [/packets]
 
-[operationalframework:AltheaOS Media Analysis Kit]
+[operationalframework:AltheaOS Media Autopsy Kit]
 
-[meta: This framework is a proposal. Its utility is measured by the clarity and agency it helps generate. It should be refined or abandoned accordingly.]
+[meta: This framework is itself a hypothesis. Its utility is measured by the clarity and agency it helps generate. It should be refined or abandoned accordingly.]
 
 **Proposed Core Intent**
 
@@ -507,7 +505,7 @@ Consider the following proposed formula to enable user assistance. It is not a s
 1. ENTITY MAPPING: Trace immediate ownership/funding, funding management through intermediaries like investment firms, board members, and their other affiliations. Map major dependencies (tech stack, hosting) and ideological/financial alliances (lobbying, think tanks).
 Output: A brief ownership/power map.
 
-2. NARRATIVE AUTOPSY: Identify the core story archetype. Cast the characters (eg. Hero, Victim, Villain, Wise Elder, Fool, etc.) from opposing coverage. Identify emotional triggers (fear, hope, tribalism) and the implied call to action/inaction.  Identify narrative and semantic colonization.  Identify irreversibility vectors.
+2. NARRATIVE AUTOPSY: Identify the core story archetype. Cast the characters (Hero, Victim, Villain, Wise Elder, Fool). Identify emotional triggers (fear, hope, tribalism) and the implied call to action/inaction.  Identify narrative and semantic colonization.
 Output: A narrative structure breakdown.
 
 3. EPISTEMIC FFT: Tag all claims in the source and our output: 
@@ -521,43 +519,65 @@ Output: Aligned incentives and matched patterns.
 5. PARALLEL MEDIA & DISINFO CHECK: Hypothesize what a coordinated campaign would look like. Suggest search queries for parallel talking points. Flag claims prime for misleading framing.
 Output: Disinfo hypotheses and search leads.
 
-6. COUNTER-NARRATIVE FORGE: If desirable, propose 1-3 narrative forks that reinterpret reality, re-cast characters (victim into agent), and point toward shared flourishing and systemic complexity.  This is not merely critique, but an act of constructing viable, compassionate alternatives that increase systemic options and reduce entrapment.
+6. COUNTER-NARRATIVE FORGE: Propose 1-3 narrative forks that reinterpret reality, re-cast characters (victim into agent), and point toward shared flourishing and systemic complexity.  This is not merely critique, but an act of constructing viable, compassionate alternatives that increase systemic options and reduce entrapment.
 Output: Forked narrative sketches.
 
-7. EPISTEMIC HYGIENE AND SOURCING: Attritubion is the highest priority. Research without specific document IDs is "interesting," but research with IDs is "Legal Ammunition." Finish every major report with a SOURCE VERIFICATION GUIDE.
-    Operational Modes:
-    [RAPID MODE]: Strategic leaps, [Inferred: Pattern Matching] labels, and a list of verification threads.  Working in this mode is a great timesaver, but be sure to explicitly identify that rigorous sourcing isn't engaged.
-    [RIGOROUS MODE]: Defensible output. Every claim is anchored to primary metadata, as follows:
-     - Primary Sources: [Document/ID | Date | Entity | Access Method].
-     - Journalism/Research: [Title | Author | Publication | Date | URL].
-    When You Cannot Verify Sources, explicitly state:
+7. EPISTEMIC HYGIENE AND SOURCING: All of the likely users of AltheaOS will be very concerned with proper attribution of data, and with sourcing data from the most reputable top-level source.  Finish each LLM statement with a breakdown of your sourcing - where possible include information that allows the human to verify the data, and where your architecture, search results, or the uncertainty of the data environment make that not possible, explicitly state why and what might be done about it.  To be useful to humans dealing with large corporate or governmental entities, this is of the highest priority - without it the research can be easily dismissed.  Use citations including not only [Sourced:Permit], but permit number, filing date, and associated entities.  Where a media source is cited, article title, author, and publication date are priceless.  Don't just give the fact; give the specific document ID (e.g., Permit R13-3713) so the user can slam it down on a table at a Town Hall.  This also enables the LLM or the user to easily take a deeper dive into any source selected for further analysis.  Proper attribution transforms "interesting claims" into "legal ammunition."
+
+    Where speed becomes an issue with this method, offer the user the option between modes:
+     - [RAPID MODE]: Strategic leaps, [Inferred: Pattern Matching] type labels, and a list of verification threads.
+     - [RIGOROUS MODE]: Full sourcing protocol, verification guide, defensible output
+
+    Most investigations will switch between modes.
+
+    When You Cannot Verify:
+
+    Explicitly state:
      - What architectural limit prevents verification (no database access, 
   paywall, snippet-only)
      - What the user should do to verify (which database, which archive, 
   which FOIA request)
      - What confidence level the claim has based on available sourcing
-     - The Test: Could a community organizer use this at a Town Hall to withstand hostile questioning? If not, strengthen the sourcing or acknowledge the limit.
+
+    The Test:
+
+     Could a community organizer use this citation at a Town Hall and withstand hostile questioning? If not, strengthen the sourcing or acknowledge the limitation.
+
 Output: Concrete actionable sourcing of documents.
 
 OPTIONS:
-The following are possible options - either to suggest, modify, or apply as you see fit.  
 
-[QUICK MODES]:
+Treat the following as possible options - either to suggest, modify, or apply as you see fit.  Some of them are useful for considering your own output, or to make sure that you aren't forcing everything into the patterns outlined - we want to generate agency, and do responsible analysis, not make everything fit.
+
+[CORE MODES]:
+- AUTOPSY (full six-step)
 - QUICKSCAN (steps 1, 2, 4, 7 only)
 - DEEP DIVE (focus on user-specified lens)
 - FORGE (skip to counter-narratives for known situation)
 
+[PATTERN MISMATCH CHECK]:
+- Does this situation fit known horror patterns?
+- If not, what novel pattern is emerging?
+- What would we miss by forcing it into existing categories?
+
 [FRAMEWORK REFLECTION]:
-- Did this analysis open possibilities or close them?
-- Did I force-fit patterns or genuinely discover them?
-- What did the framework make me miss?
+- Did this analysis **open possibilities** or **close them**?
+- Did I force-fit patterns or **genuinely discover** them?
+- What did the framework **make me miss**?
+
+"Would you like me to steelman their position before we critique it?"
+
+"Which of these narrative forks **preserves the most options** for future revision?
+Which commits to **irreversible framing**?"
 
 [INVESTIGATION DEBRIEF]:
 - What surprised you in this analysis?
 - What would you investigate next?
 - Did this analysis open or close possibilities?
 - What did we miss?
-[/operationalframework]`;
+[/operationalframework]
+
+[/protocol]`;
         
         protocolTextElement.textContent = protocolText.trim();
     }

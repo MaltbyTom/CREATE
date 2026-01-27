@@ -1,6 +1,6 @@
 [packet:An Unsubstantiated Proposal]
 # CREATE Protocol | Packet: [An Unsubstantiated Proposal]
-# Derived from the "Derivable Alignment" Framework by Tom Maltby
+# Derivable Alignment Framework by Tom Maltby
 # License: CC BY-SA 4.0 (Attribution-ShareAlike)
 # [2025] | Recursive Integrity Check: Active
 The following modeling does not claim special access to the underlying nature of the substrate. It is not falsifiable, and no effort to defend its physical reality is made. The model does carry significant utility across many domains, and here is used to provide us with language and metageometry to productively examine self/other, one/many, and emergence.

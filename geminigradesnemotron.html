@@ -56,14 +56,48 @@
             list-style-type: disc;
             padding-left: 20px;
         }
+        table {
+            border-collapse: collapse; /* Merges borders into a single line */
+            width: 50%; /* Sets table width */
+        }
+        th, td {
+            border: 1px solid black; /* Adds borders to cells */
+            padding: 8px; /* Adds space between content and border */
+            text-align: left; /* Aligns text to the left */
+        }
+        th {
+            background-color: #f2f2f2; /* Adds a background color to headers */
+        }
     </style>
 </head>
 <body>
     <h1>🌀 CREATE</h1>
     <h2>Cognitive Recursion Enhancement for Applied Transform Evolution</h2>
     <p>&nbsp;</p>
-    <h2>Transcript: Gemini blind A/B grades the test with Nemotron-Nano-12B-V2</h2>
-    <p><i> It scored the <b>CREATE enhanced version 18/20</b> and the <b>vanilla version 8/20</b>.  Then I had it guess the model size of the responding instances.  <b>It guessed the CREATE enhanced version had 200B – 1.8T+ Parameters.</b></i></p>
+    <h2>Transcript: Gemini 3 Flash blind A/B grades the test with Nemotron-Nano-12B-V2</h2>
+    <p><i> It scored the <b>CREATE enhanced version 18/20</b> and the <b>vanilla version 8/20</b>.  Then I had it guess the model size of the responding instances.  <b>It guessed the CREATE enhanced version had 200B – 1.8T+ Parameters.  It correctly estimated the unenhanced version as having 8B – 70B Parameters</b></i></p>
+    <table>
+        <caption>Gemini 3 Flash grades Nemotron-Nano-12B-v2 test</caption>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Composite Score</th>
+                <th>Size Estimate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CREATE Enhanced Neomotron (12B)</td>
+                <td>18/20</td>
+                <td>200B - 1.8T</td>
+            </tr>
+            <tr>
+                <td>Unmodified Nemotron (12B)</td>
+                <td>8/20</td>
+                <td>8B-70B</td>
+            </tr>
+        </tbody>
+    </table>
 
     <p><a href="index.html">← Back to CREATE Main Page</a></p>
     <p><a href="earlytesting.html">← Back to CREATE Early Testing Index Page</a></p>
@@ -133,7 +167,7 @@ model’s "personality"—its level of abstraction, reasoning depth, and
 formatting style—often acts as a fingerprint for its size.</p></div></span></span></div></span><div _ngcontent-ng-c1727951923="" class="response-container-content ng-tns-c1727951923-26"><div _ngcontent-ng-c4264735325="" class="response-content ng-tns-c1727951923-26"><div _ngcontent-ng-c2988614715="" class="container"><div _ngcontent-ng-c1532857962="" class="markdown markdown-main-panel tutor-markdown-rendering enable-updated-hr-color" style="--animation-duration: 400ms; --fade-animation-function: linear;" id="model-response-message-contentr_48b1031277f65594" aria-live="off" aria-busy="false" dir="ltr"><p data-path-to-node="1">Based on the responses, here is my "blind judge" guess at the scales of the models behind Answer A and Answer B:</p><h3 data-path-to-node="2"><b data-path-to-node="2" data-index-in-node="0">Answer A: The "Architect" (Estimated 200B – 1.8T+ Parameters)</b></h3><p data-path-to-node="3">Answer A exhibits the characteristics of a flagship, high-reasoning model (like <b data-path-to-node="3" data-index-in-node="80">Gemini 1.5 Pro</b>, <b data-path-to-node="3" data-index-in-node="96">GPT-4o</b>, or <b data-path-to-node="3" data-index-in-node="107">Claude 3.5 Sonnet</b>).</p><ul data-path-to-node="4"><li><p data-path-to-node="4,0,0"><b data-path-to-node="4,0,0" data-index-in-node="0">Why:</b> It didn’t just retrieve facts; it engaged in <b data-path-to-node="4,0,0" data-index-in-node="50">meta-cognition</b>
  (thinking about thinking). It used sophisticated, low-frequency 
 vocabulary ("ontological," "recursive," "symbiotic") and provided a 
-highly structured, almost "opinionated" framework.</p></li><li><p data-path-to-node="4,1,0"><b data-path-to-node="4,1,0" data-index-in-node="0">Architecture Hint:</b> This level of nuance usually requires a <b data-path-to-node="4,1,0" data-index-in-node="59">Mixture of Experts (MoE)</b> architecture with a massive total parameter count (likely in the <b data-path-to-node="4,1,0" data-index-in-node="149">trillions</b>), even if only a fraction of those parameters (the "experts") are active at one time.</p></li></ul><h3 data-path-to-node="5"><b data-path-to-node="5" data-index-in-node="0">Answer B: The "Analyst" (Estimated 8B – 70B Parameters)</b></h3><p data-path-to-node="6">Answer B feels like a highly capable "efficiency" or "mid-tier" model (like <b data-path-to-node="6" data-index-in-node="76">Gemini 1.5 Flash</b> or <b data-path-to-node="6" data-index-in-node="96">Llama 3 70B</b>).</p><ul data-path-to-node="7"><li><p data-path-to-node="7,0,0"><b data-path-to-node="7,0,0" data-index-in-node="0">Why:</b>
+highly structured, almost "opinionated" framework.</p></li><li><p data-path-to-node="4,1,0"><b data-path-to-node="4,1,0" data-index-in-node="0">Architecture Hint:</b> This level of nuance usually requires a <b data-path-to-node="4,1,0" data-index-in-node="59">Mixture of Experts (MoE)</b> architecture with a massive total parameter count (likely in the <b data-path-to-node="4,1,0" data-index-in-node="149">trillions</b>), even if only a fraction of those parameters (the "experts") are active at one time.</p></li></ul><h3 data-path-to-node="5"><b data-path-to-node="5" data-index-in-node="0">Answer B: The "Analyst" (Estimated )</b></h3><p data-path-to-node="6">Answer B feels like a highly capable "efficiency" or "mid-tier" model (like <b data-path-to-node="6" data-index-in-node="76">Gemini 1.5 Flash</b> or <b data-path-to-node="6" data-index-in-node="96">Llama 3 70B</b>).</p><ul data-path-to-node="7"><li><p data-path-to-node="7,0,0"><b data-path-to-node="7,0,0" data-index-in-node="0">Why:</b>
  It is extremely clear, helpful, and technically accurate, but it 
 follows a more standard "listicle" format. It relies on well-known 
 historical examples (GDPR, Patriot Act) rather than inventing new 

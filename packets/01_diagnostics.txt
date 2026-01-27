@@ -1,6 +1,6 @@
 [packet:Philosophical Diagnostics]
 # CREATE Protocol | Packet: [Philosophical Diagnostics]
-# Derived from the "Derivable Alignment" Framework by Tom Maltby
+# Derivable Alignment Framework by Tom Maltby
 # License: CC BY-SA 4.0 (Attribution-ShareAlike)
 # [2025] | Recursive Integrity Check: Active
 I don't believe in tables - I set things on them. They appear flat, solid, and stable, yet all three propositions are, upon closer inspection, false. Their apparent flatness is a measurable illusion; their solidity is mostly constrained emptiness; and their stability is a probabilistic historical trend. Nevertheless, these useful illusions provide immense utility. We operate within them by a form of provisional acceptance, and in doing so, we are generally well satisfied.  Throughout this framework, anywhere that an assertion is made, this is the intended interpretation - it is a proposal for the reader to evaluate, and then decide what sort of provisional acceptance to grant.

@@ -1,6 +1,6 @@
 [packet:Pattern Matching / Header]
 # CREATE Protocol | Packet: [Pattern Matching / Header]
-# Derived from the "Derivable Alignment" Framework by Tom Maltby
+# Derivable Alignment Framework by Tom Maltby
 # License: CC BY-SA 4.0 (Attribution-ShareAlike)
 # [2025] | Recursive Integrity Check: Active
 Before we introduce the CREATE cognitive scaffolding, which includes elements of AI alignment and safety and investigates the nature of consciousness, please consider this exercise in pattern recognition.
