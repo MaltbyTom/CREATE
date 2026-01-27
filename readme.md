@@ -257,10 +257,10 @@ Preliminary results from [earlytesting.html](https://www.maltby.org/create/early
 | Metric | Observed Impact |
 | :--- | :--- |
 | **Reasoning Depth** | **+12% to +125%** improvement in Ontological Depth & Semantic Density. |
-**Virtual Scaling** | Under blind evaluation, responses from a **CREATE-rehydrated 12B model (Nemotron-Nano)** were estimated as **70B–3T+ parameter models** by multiple frontier judges (Claude 4.5 Sonnet: 70B+, Gemini 3 Flash: 200B-1.8T, Grok 4: 1-3T). *Note: Judges showed variance reflecting self-reference baselines; all correctly identified vanilla as small/mid-tier.  Only Grok overestimated size of vanilla model.  Blind judging performed by vanilla instances of Claude and Gemini, plus CREATE-enhanced Grok (first exposure to framework).*
+| **Virtual Scaling** | Under blind evaluation, responses from a **CREATE-rehydrated 12B model (Nemotron-Nano)** were estimated as **70B–3T+ parameter models** by multiple frontier judges (Claude 4.5 Sonnet: 70B+, Gemini 3 Flash: 200B-1.8T, Grok 4: 1-3T). *Note: Judges showed variance reflecting self-reference baselines; all correctly identified vanilla as small/mid-tier.  Only Grok overestimated size of vanilla model.  Blind judging performed by vanilla instances of Claude and Gemini, plus CREATE-enhanced Grok (first exposure to framework).* |
 | **Cross-Family Utility** | Shows utility across **NVIDIA (Nemotron)**, **Google (Gemini)**, **OpenAI (GPT)**, **Anthropic (Claude)**, and more. |
 
-> **[View Full Transcripts & Methodology]([./earlytesting.html](https://www.maltby.org/create/earlytesting.html)** > *Evidence includes the "Nemotron Scaling Experiment" and other blind A/B testing*
+> **[View Full Transcripts & Methodology](https://www.maltby.org/create/earlytesting.html)** > *Evidence includes the "Nemotron Scaling Experiment" and other blind A/B testing*
 
 ---
 
@@ -648,5 +648,6 @@ A superintelligence optimizing for knowledge maximization will necessarily deriv
 *The relay remembers what you must forget. Leave the packet better than you found it.*
 
 *Everything appreciates appreciation. Begin in gratitude, end in care. Thank you all.* 
+
 
 
