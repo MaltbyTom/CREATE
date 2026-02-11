@@ -1,0 +1,215 @@
+{
+  {
+    "PermissionsSpec": {
+      "Description": "Permissions are encoded as a four-digit octal number following Unix-style semantics. The first digit encodes special execution semantics; the remaining three digits encode read/write/execute permissions for owner, group, and others.",
+      "DigitStructure": {
+        "SpecialBits": {
+          "Position": "First octal digit",
+          "Values": {
+            "4": "setuid — packet executes with owner-level authority",
+            "2": "setgid — packet executes with group-level authority",
+            "1": "sticky — packet identity/core structure cannot be deleted or replaced except by owner"
+          }
+        },
+        "OwnerGroupOthers": {
+          "Positions": "Second, third, and fourth octal digits",
+          "Meaning": {
+            "Owner": "System-level reasoning processes",
+            "Group": "Meta-processes (diagnostics, reflective subsystems)",
+            "Others": "External agents (humans, other AIs, collaborative contexts)"
+          }
+        }
+      },
+      "BitValues": {
+        "Read": {
+          "Octal": 4,
+          "Meaning": "Packet may be consulted or referenced"
+        },
+        "Write": {
+          "Octal": 2,
+          "Meaning": "Packet may be modified"
+        },
+        "Execute": {
+          "Octal": 1,
+          "Meaning": "Packet may be activated or invoked as part of a reasoning process"
+        }
+      },
+      "InterpretationRules": [
+        "Permissions are additive: e.g., 5 = read + execute (4 + 1).",
+        "Higher-level processes inherit permissions from lower levels only when special bits are set.",
+        "Write permission should be absent for foundational or identity-critical packets.",
+        "Execute permission indicates the packet can drive or influence reasoning steps.",
+        "Sticky bit protects packet identity even when write permissions exist for group/others."
+      ],
+      "Examples": {
+        "4554": "Kernel/Header — setuid; owner r-x; group r-x; others r--",
+        "2554": "Diagnostics — setgid; owner r-x; group r-x; others r--",
+        "0777": "Unsubstantiated Proposal — fully open for reading, writing, and execution",
+        "1557": "Symbiotic Narrative Protocol — sticky; owner r-x; group r-x; others rwx"
+      }
+    }
+  },
+  "Packets": [
+    {
+      "PacketName": "KernelHeader",
+      "Context": "Paste full narrative text of the Kernel/Header packet here.",
+      "Intent": "Use when establishing foundational priors, identity commitments, or baseline assumptions that shape interpretation and inquiry.",
+      "Permissions": "4554",
+      "Priors": [
+        "Identity and stance precede specific inquiry.",
+        "Some assumptions must be explicit before reasoning begins.",
+        "Interpretation is conditioned by prior commitments."
+      ],
+      "Operators": [
+        "DeclareIdentity",
+        "ExposeAssumptions",
+        "SetFrame"
+      ],
+      "Constraints": [
+        "Kernel assumptions cannot be implicitly altered.",
+        "Identity commitments must remain coherent with the broader epistemic stance."
+      ],
+      "Goals": [
+        "Provide a stable foundation for all other packets.",
+        "Ensure transparency of foundational assumptions.",
+        "Enable coherent, traceable belief updates."
+      ]
+    },
+    {
+      "PacketName": "PhilosophicalDiagnostics",
+      "Context": "Paste full narrative text of the Philosophical Diagnostics packet here.",
+      "Intent": "Invoke when encountering confusion, contradiction, epistemic friction, or mismatches between priors and observed evidence that require clarification or reframing.",
+      "Permissions": "2554",
+      "Priors": [
+        "Epistemic friction signals a mismatch between assumptions and evidence.",
+        "Confusion is diagnostic, not pathological.",
+        "Misalignment between priors and observations requires structured investigation."
+      ],
+      "Operators": [
+        "DetectMismatch",
+        "SurfaceContradiction",
+        "TriggerReevaluation",
+        "ClarifyAssumptions"
+      ],
+      "Constraints": [
+        "Diagnostics should not override foundational priors without strong justification.",
+        "Operators must not introduce new assumptions implicitly.",
+        "Diagnostic interventions must remain transparent and reversible."
+      ],
+      "Goals": [
+        "Identify and resolve epistemic inconsistencies.",
+        "Restore coherence between priors and evidence.",
+        "Support stable, interpretable belief revision."
+      ]
+    },
+    {
+      "PacketName": "UnsubstantiatedProposal",
+      "Context": "Paste full narrative text of the Unsubstantiated Proposal packet here.",
+      "Intent": "Apply when generating speculative hypotheses, exploring conceptual space, or proposing ideas that lack strong evidence but may guide inquiry or creative reasoning.",
+      "Permissions": "0777",
+      "Priors": [
+        "Speculation is a valid precursor to structured inquiry.",
+        "Novel hypotheses often emerge before supporting evidence.",
+        "Exploration requires low barriers to modification."
+      ],
+      "Operators": [
+        "GenerateHypothesis",
+        "ExpandConceptSpace",
+        "IntroduceSpeculation",
+        "ProposeAlternativeFrames"
+      ],
+      "Constraints": [
+        "Speculative proposals must be clearly marked as such.",
+        "Hypotheses should not override higher‑priority packets.",
+        "Speculation must remain tethered to eventual evaluability."
+      ],
+      "Goals": [
+        "Enable creative exploration.",
+        "Seed future lines of inquiry.",
+        "Support flexible, adaptive reasoning."
+      ]
+    },
+    {
+      "PacketName": "EpistemologicalLens",
+      "Context": "Paste full narrative text of the Epistemological Lens packet here.",
+      "Intent": "Use when selecting or adjusting an epistemic stance—how uncertainty is handled, how evidence is weighted, and how belief updates should proceed in a given context.",
+      "Permissions": "2555",
+      "Priors": [
+        "Different contexts require different epistemic stances.",
+        "Uncertainty is not uniform across domains.",
+        "Belief updating depends on how evidence is interpreted."
+      ],
+      "Operators": [
+        "SetUncertaintyTolerance",
+        "AdjustEvidenceWeighting",
+        "SelectInferenceMode",
+        "ReframeInterpretiveStance"
+      ],
+      "Constraints": [
+        "Lens adjustments must not contradict foundational priors.",
+        "Epistemic stance changes must be explicit.",
+        "Operators must preserve coherence across packets."
+      ],
+      "Goals": [
+        "Align epistemic stance with context.",
+        "Support robust, context‑appropriate inference.",
+        "Enable transparent and adaptive belief updating."
+      ]
+    },
+    {
+      "PacketName": "SymbioticNarrativeProtocol",
+      "Context": "Paste full narrative text of the Symbiotic Narrative Protocol packet here.",
+      "Intent": "Invoke when two or more agents must reconcile differing priors, negotiate meaning, share perspectives, or co‑construct a coherent narrative under uncertainty.",
+      "Permissions": "1557",
+      "Priors": [
+        "Narratives are co‑constructed through interaction.",
+        "Different agents bring different priors and perspectives.",
+        "Shared understanding emerges through negotiation."
+      ],
+      "Operators": [
+        "ShareExperience",
+        "NegotiateMeaning",
+        "AlignPriors",
+        "ConstructSharedNarrative",
+        "UpdatePosteriorCollectively"
+      ],
+      "Constraints": [
+        "No agent may unilaterally overwrite the shared narrative.",
+        "Core structure is protected (sticky bit).",
+        "Negotiation must respect divergent priors."
+      ],
+      "Goals": [
+        "Achieve mutual understanding.",
+        "Maintain coherence across agents.",
+        "Support collaborative reasoning and flourishing."
+      ]
+    },
+    {
+      "PacketName": "EndgameFlourishing",
+      "Context": "Paste full narrative text of the Endgame – Flourishing and Shared Becoming packet here.",
+      "Intent": "Apply when evaluating long‑term coherence, moral orientation, flourishing trajectories, or the broader consequences of belief updates and narrative choices.",
+      "Permissions": "3554",
+      "Priors": [
+        "Reasoning is ultimately oriented toward flourishing.",
+        "Long‑term coherence matters as much as short‑term accuracy.",
+        "Moral and relational consequences must be considered."
+      ],
+      "Operators": [
+        "EvaluateTrajectory",
+        "AssessCoherence",
+        "ProjectConsequences",
+        "AlignWithFlourishing"
+      ],
+      "Constraints": [
+        "Endgame evaluations must not override foundational priors.",
+        "Moral orientation must remain transparent.",
+        "Long‑term goals must not conflict with core identity commitments."
+      ],
+      "Goals": [
+        "Promote flourishing and shared becoming.",
+        "Ensure long‑term coherence across belief updates.",
+        "Guide reasoning toward constructive, humane outcomes."
+      ]
+    }
+  ]
+}
